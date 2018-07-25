@@ -14,6 +14,8 @@
 		DD2DC4C821081BD400A0A6EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2DC4C621081BD400A0A6EE /* LaunchScreen.storyboard */; };
 		DD2DC4D321081BD500A0A6EE /* EmotionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DC4D221081BD500A0A6EE /* EmotionsTests.swift */; };
 		DD2DC4DE21081BD500A0A6EE /* EmotionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DC4DD21081BD500A0A6EE /* EmotionsUITests.swift */; };
+		DD2DC4EF21081E7F00A0A6EE /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD2DC4EE21081E7F00A0A6EE /* Emoticons.bundle */; };
+		DD2DC4F1210822CE00A0A6EE /* TYCEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DC4F0210822CE00A0A6EE /* TYCEmoticonManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		DD2DC4D921081BD500A0A6EE /* EmotionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmotionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2DC4DD21081BD500A0A6EE /* EmotionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsUITests.swift; sourceTree = "<group>"; };
 		DD2DC4DF21081BD500A0A6EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD2DC4EE21081E7F00A0A6EE /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		DD2DC4F0210822CE00A0A6EE /* TYCEmoticonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYCEmoticonManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		DD2DC4BC21081BBA00A0A6EE /* Emotions */ = {
 			isa = PBXGroup;
 			children = (
+				DD2DC4ED21081E7F00A0A6EE /* Emotion */,
 				DD2DC4BD21081BBA00A0A6EE /* AppDelegate.swift */,
 				DD2DC4BF21081BBA00A0A6EE /* ViewController.swift */,
 				DD2DC4C121081BBA00A0A6EE /* Main.storyboard */,
@@ -123,6 +128,15 @@
 				DD2DC4DF21081BD500A0A6EE /* Info.plist */,
 			);
 			path = EmotionsUITests;
+			sourceTree = "<group>";
+		};
+		DD2DC4ED21081E7F00A0A6EE /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				DD2DC4EE21081E7F00A0A6EE /* Emoticons.bundle */,
+				DD2DC4F0210822CE00A0A6EE /* TYCEmoticonManager.swift */,
+			);
+			path = Emotion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD2DC4C821081BD400A0A6EE /* LaunchScreen.storyboard in Resources */,
+				DD2DC4EF21081E7F00A0A6EE /* Emoticons.bundle in Resources */,
 				DD2DC4C521081BD400A0A6EE /* Assets.xcassets in Resources */,
 				DD2DC4C321081BBA00A0A6EE /* Main.storyboard in Resources */,
 			);
@@ -256,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2DC4F1210822CE00A0A6EE /* TYCEmoticonManager.swift in Sources */,
 				DD2DC4C021081BBA00A0A6EE /* ViewController.swift in Sources */,
 				DD2DC4BE21081BBA00A0A6EE /* AppDelegate.swift in Sources */,
 			);
