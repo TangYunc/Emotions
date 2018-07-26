@@ -24,6 +24,10 @@ class TYCEmoticonPackage: NSObject {
                 let models = NSArray.yy_modelArray(with: TYCEmoticon.self, json: array) as? [TYCEmoticon]else {
                 return
             }
+            //遍历models 数组，设置每一个表情符号的目录
+            for m in models {
+                m.directory = directory
+            }
             //设置表情数组
             emotions += models  
         }

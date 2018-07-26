@@ -29,6 +29,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let m1 = TYCEmoticonManager.share
         print(m1.packages)
+//        let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
+//        let bundle = Bundle(path: path!)
+//        let image = UIImage(named: "lxh/lxh_toule.png", in: bundle, compatibleWith: nil)
+//        print(image)
+        print(TYCEmoticonManager.share.packages.last?.emotions.first?.image)
+        print(TYCEmoticonManager.share.packages.last?.emotions.first)
         
     }
 

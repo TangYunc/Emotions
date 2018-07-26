@@ -19,6 +19,24 @@ class TYCEmoticon: NSObject {
     var png: String?
     /// emoji 的十六进制编码
     var code: String?
+    /// 表情所在的目录路径
+    var directory: String?
+    
+    /// '图片'表情对于的图像
+    var image: UIImage?{
+        
+        //判断表情类型
+        if type {
+            return nil
+        }
+        guard let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil),
+        let bundle = Bundle(path: path),
+            let image = UIImage(named: "lxh/lxh_toule.png", in: bundle, compatibleWith: nil) else {
+                return nil
+        }
+        return UIImage(named: "\(directory)/\(png)", in: bundle, compatibleWith: nil)
+    }
+    
     override var description: String{
         return yy_modelDescription();
     }
