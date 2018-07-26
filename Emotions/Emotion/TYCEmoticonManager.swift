@@ -21,6 +21,41 @@ class TYCEmoticonManager {
     }
 }
 
+extension TYCEmoticonManager {
+    
+    /// 根据string []在所有的表情符号中查找对应的表情模型对象
+    ///
+    /// - Parameter string:
+    /// - Returns: 如果找到，返回表情模型;否则，返回nil
+    func findEmoticon(string: String) -> TYCEmoticon? {
+        
+            //遍历表情包
+        for p in packages {
+            
+            //在表情数组中过滤 string
+            //方法一
+//            let result = p.emotions.filter ({ (em) -> Bool in
+//                return em.chs == string
+//            })
+            //方法二，尾随闭包
+//            let result = p.emotions.filter() { (em) -> Bool in
+//                return em.chs == string
+//            }
+            //方法三，如果闭包中只有一句，并且是返回‘闭包的格式定义可以省略，参数省略之后，使用 $0 $1... 一次替代原有的参数,reture 也可以省略
+//            let result = p.emotions.filter() {
+//                return $0.chs == string
+//            }
+            //方法四，如果闭包中只有一句，并且是返回‘闭包的格式定义可以省略，参数省略之后，使用 $0 $1... 一次替代原有的参数,reture 也可以省略
+                let result = p.emotions.filter() { $0.chs == string }
+            //判断结果数组的数量
+            if result.count == 1 {
+                return result[0]
+            }
+        }
+        return nil
+    }
+}
+
 // MARK: - 表情包数据处理
 private extension TYCEmoticonManager{
     

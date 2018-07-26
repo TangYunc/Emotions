@@ -35,7 +35,8 @@ class ViewController: UIViewController {
 //        print(image)
         print(TYCEmoticonManager.share.packages.last?.emotions.first?.image)
         print(TYCEmoticonManager.share.packages.last?.emotions.first)
-        
+       //-----测试查找表情-----
+        print(TYCEmoticonManager.share.findEmoticon(string: "[爱你]"))
     }
 
     override func didReceiveMemoryWarning() {
