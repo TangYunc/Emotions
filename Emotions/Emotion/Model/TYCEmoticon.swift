@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import YYModel
 /// 表情模型
 class TYCEmoticon: NSObject {
 
@@ -19,9 +19,9 @@ class TYCEmoticon: NSObject {
     var png: String?
     /// emoji 的十六进制编码
     var code: String?
-//    override var description: String{
-//        return yy
-//    }
+    override var description: String{
+        return yy_modelDescription();
+    }
     
     
     

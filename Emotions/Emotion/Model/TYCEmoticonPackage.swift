@@ -19,5 +19,7 @@ class TYCEmoticonPackage: NSObject {
     /// 懒加载的表情模型数组
     ///使用懒加载可以避免后续的解包
     lazy var emotions = [TYCEmoticon]()
-    
+    override var description: String{
+        return yy_modelDescription();
+    }
 }
