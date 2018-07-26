@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		628134F242FC017343C5F7C7 /* libPods-Emotions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69FABD3F7B696448FB325D3E /* libPods-Emotions.a */; };
 		DD2DC4BE21081BBA00A0A6EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DC4BD21081BBA00A0A6EE /* AppDelegate.swift */; };
 		DD2DC4C021081BBA00A0A6EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DC4BF21081BBA00A0A6EE /* ViewController.swift */; };
 		DD2DC4C321081BBA00A0A6EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2DC4C121081BBA00A0A6EE /* Main.storyboard */; };
@@ -14,8 +15,8 @@
 		DD2DC4C821081BD400A0A6EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2DC4C621081BD400A0A6EE /* LaunchScreen.storyboard */; };
 		DD2DC4D321081BD500A0A6EE /* EmotionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DC4D221081BD500A0A6EE /* EmotionsTests.swift */; };
 		DD2DC4DE21081BD500A0A6EE /* EmotionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DC4DD21081BD500A0A6EE /* EmotionsUITests.swift */; };
-		DD2DC4EF21081E7F00A0A6EE /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD2DC4EE21081E7F00A0A6EE /* Emoticons.bundle */; };
 		DD2DC4F1210822CE00A0A6EE /* TYCEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DC4F0210822CE00A0A6EE /* TYCEmoticonManager.swift */; };
+		DD2DC4F6210965E700A0A6EE /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD2DC4F5210965E700A0A6EE /* HMEmoticon.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BE99475D320AFF7C0D98930 /* Pods-Emotions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emotions.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emotions/Pods-Emotions.release.xcconfig"; sourceTree = "<group>"; };
+		69FABD3F7B696448FB325D3E /* libPods-Emotions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Emotions.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D27ADAD16D2A9CB72DF4E9FC /* Pods-Emotions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emotions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emotions/Pods-Emotions.debug.xcconfig"; sourceTree = "<group>"; };
 		DD2DC4BA21081BBA00A0A6EE /* Emotions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emotions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2DC4BD21081BBA00A0A6EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD2DC4BF21081BBA00A0A6EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +53,8 @@
 		DD2DC4D921081BD500A0A6EE /* EmotionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmotionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2DC4DD21081BD500A0A6EE /* EmotionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsUITests.swift; sourceTree = "<group>"; };
 		DD2DC4DF21081BD500A0A6EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD2DC4EE21081E7F00A0A6EE /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		DD2DC4F0210822CE00A0A6EE /* TYCEmoticonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYCEmoticonManager.swift; sourceTree = "<group>"; };
+		DD2DC4F5210965E700A0A6EE /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				628134F242FC017343C5F7C7 /* libPods-Emotions.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		149E606AD467EAAEA3EC2319 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D27ADAD16D2A9CB72DF4E9FC /* Pods-Emotions.debug.xcconfig */,
+				2BE99475D320AFF7C0D98930 /* Pods-Emotions.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DD2DC4B121081BBA00A0A6EE = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +99,8 @@
 				DD2DC4D121081BD500A0A6EE /* EmotionsTests */,
 				DD2DC4DC21081BD500A0A6EE /* EmotionsUITests */,
 				DD2DC4BB21081BBA00A0A6EE /* Products */,
+				149E606AD467EAAEA3EC2319 /* Pods */,
+				E501C2E4C9729A2637DE3B2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,10 +149,18 @@
 		DD2DC4ED21081E7F00A0A6EE /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
-				DD2DC4EE21081E7F00A0A6EE /* Emoticons.bundle */,
+				DD2DC4F5210965E700A0A6EE /* HMEmoticon.bundle */,
 				DD2DC4F0210822CE00A0A6EE /* TYCEmoticonManager.swift */,
 			);
 			path = Emotion;
+			sourceTree = "<group>";
+		};
+		E501C2E4C9729A2637DE3B2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69FABD3F7B696448FB325D3E /* libPods-Emotions.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +170,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD2DC4E221081BD500A0A6EE /* Build configuration list for PBXNativeTarget "Emotions" */;
 			buildPhases = (
+				A4A03AE2BEBD7CED69F2BD62 /* [CP] Check Pods Manifest.lock */,
 				DD2DC4B621081BBA00A0A6EE /* Sources */,
 				DD2DC4B721081BBA00A0A6EE /* Frameworks */,
 				DD2DC4B821081BBA00A0A6EE /* Resources */,
@@ -243,8 +268,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2DC4F6210965E700A0A6EE /* HMEmoticon.bundle in Resources */,
 				DD2DC4C821081BD400A0A6EE /* LaunchScreen.storyboard in Resources */,
-				DD2DC4EF21081E7F00A0A6EE /* Emoticons.bundle in Resources */,
 				DD2DC4C521081BD400A0A6EE /* Assets.xcassets in Resources */,
 				DD2DC4C321081BBA00A0A6EE /* Main.storyboard in Resources */,
 			);
@@ -265,6 +290,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A4A03AE2BEBD7CED69F2BD62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Emotions-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD2DC4B621081BBA00A0A6EE /* Sources */ = {
@@ -444,6 +490,7 @@
 		};
 		DD2DC4E321081BD500A0A6EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D27ADAD16D2A9CB72DF4E9FC /* Pods-Emotions.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -462,6 +509,7 @@
 		};
 		DD2DC4E421081BD500A0A6EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BE99475D320AFF7C0D98930 /* Pods-Emotions.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

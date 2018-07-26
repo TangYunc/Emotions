@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Emotions/ViewController.swift"
-            timestampString = "554180335.310132"
+            filePath = "Emotions/Emotion/TYCEmoticonManager.swift"
+            timestampString = "554264684.2977231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "loadPackage()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
