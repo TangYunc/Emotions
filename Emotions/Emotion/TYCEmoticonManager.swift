@@ -33,12 +33,5 @@ private extension TYCEmoticonManager{
                 else {
                     return
         }
-        
-        
-        
-        
-        
-        print(array)
     }
-    
 }
