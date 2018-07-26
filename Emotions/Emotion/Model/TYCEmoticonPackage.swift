@@ -14,7 +14,20 @@ class TYCEmoticonPackage: NSObject {
     /// 表情包的分组名
     var groupName: String?
     /// 表情目录，从目录下加载 info.plist 可以创建表情模型数组
-    var directory: String?
+    var directory: String? {
+        didSet {
+            guard let directory = directory,
+                let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil),
+                let bundle = Bundle(path: path),
+                let infoPath = bundle.path(forResource: "info.plist", ofType: nil),
+                let array = NSArray(contentsOfFile: infoPath) as? [[String: String]],
+                let models = NSArray.yy_modelArray(with: TYCEmoticon.self, json: array) as? [TYCEmoticon]else {
+                return
+            }
+            //设置表情数组
+            emotions += models  
+        }
+    }
     
     /// 懒加载的表情模型数组
     ///使用懒加载可以避免后续的解包

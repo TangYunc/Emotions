@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let m1 = TYCEmoticonManager.share
-        print(m1)
+        print(m1.packages)
         
     }
 

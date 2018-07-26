@@ -39,6 +39,5 @@ private extension TYCEmoticonManager{
         //设置表情包数据
         //使用 += 不需要再次为packages 分配空间，直接添加数据
         packages += models
-        print(models)
     }
 }
