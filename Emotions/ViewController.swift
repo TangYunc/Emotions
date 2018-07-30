@@ -28,7 +28,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //我[爱你]啊[笑哈哈]
+        //目标：我[爱你]啊[笑哈哈]
+        /**
+         注意点：应该倒序遍历
+         我[爱你]啊[笑哈哈]
+         r1 = {1, 4}
+         r2 = {6, 5}
+         
+         - 顺序替换，替换了前面的之后，后面的范围会失效
+         我[爱你的图片]啊[笑哈哈]
+         - 倒序替换，一次循环可以把所有的图片全部替换完成
+         我[爱你的图片]啊[笑哈哈的图片]
+         */
         let sting = "我[爱你]啊[笑哈哈]"
         demoLabel.attributedText = emoticonString(string: sting)
     }
@@ -38,7 +49,8 @@ class ViewController: UIViewController {
     /// - Returns: 属性文本
     func emoticonString(string: String) -> NSAttributedString {
         
-        let attrSting = NSAttributedString(string: string)
+        /// AttributedString 是不可变的
+        let attrSting = NSMutableAttributedString(string: string)
         //1.建立正则表达式，过滤所有的表情文字
         //[] () 都是正则表达式的关键字，如果要参与匹配，需要转义
         let pattern = "\\[.*?\\]"
@@ -49,11 +61,17 @@ class ViewController: UIViewController {
         //匹配所有项
         let matches = regx.matches(in: string, options: [], range: NSRange(location: 0, length: attrSting.length))
         //遍历所有匹配结果
-        for m in matches {
+        for m in matches.reversed() {
             let r = m.range(at: 0)
             let subStr = (attrSting.string as NSString).substring(with: r)
             print(subStr)
-            
+            //使用subStr查找对应的表情符号
+            if  let em = TYCEmoticonManager.share.findEmoticon(string: subStr) {
+                
+                print(em)
+                //使用表情符号中的属性文本，替换原有的属性文本的内容
+                attrSting.replaceCharacters(in: r, with: em.imageText(font: demoLabel.font))
+            }
             
         }
         return attrSting
