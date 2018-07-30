@@ -41,7 +41,8 @@ class ViewController: UIViewController {
          我[爱你的图片]啊[笑哈哈的图片]
          */
         let sting = "我[爱你]啊[笑哈哈]"
-        demoLabel.attributedText = emoticonString(string: sting)
+//        demoLabel.attributedText = emoticonString(string: sting)
+        demoLabel.attributedText = TYCEmoticonManager.share.emoticonString(string: sting, font: demoLabel.font)
     }
     /// 将给定的字符串转换成属性文本
     ///

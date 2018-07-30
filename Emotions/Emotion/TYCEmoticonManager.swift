@@ -6,6 +6,7 @@
 //  Copyright © 2018年 tangyunchuan. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 class TYCEmoticonManager {
@@ -21,7 +22,46 @@ class TYCEmoticonManager {
     }
 }
 
+// MARK: - 表情符号字符串的处理
 extension TYCEmoticonManager {
+    
+    /// 将给定的字符串转换成属性文本
+    ///
+    /// - Parameter string: 完整的字符串
+    /// - Returns: 属性文本
+    func emoticonString(string: String, font: UIFont) -> NSAttributedString {
+        
+        /// AttributedString 是不可变的
+        let attrSting = NSMutableAttributedString(string: string)
+        //1.建立正则表达式，过滤所有的表情文字
+        //[] () 都是正则表达式的关键字，如果要参与匹配，需要转义
+        let pattern = "\\[.*?\\]"
+        
+        guard let regx = try? NSRegularExpression(pattern: pattern, options: []) else {
+            return attrSting
+        }
+        //匹配所有项
+        let matches = regx.matches(in: string, options: [], range: NSRange(location: 0, length: attrSting.length))
+        //遍历所有匹配结果
+        for m in matches.reversed() {
+            let r = m.range(at: 0)
+            let subStr = (attrSting.string as NSString).substring(with: r)
+            print(subStr)
+            //使用subStr查找对应的表情符号
+            if  let em = TYCEmoticonManager.share.findEmoticon(string: subStr) {
+                
+                print(em)
+                //使用表情符号中的属性文本，替换原有的属性文本的内容
+                attrSting.replaceCharacters(in: r, with: em.imageText(font: font))
+            }
+            
+        }
+        //统一设置一遍字符串的属性
+        
+        attrSting.addAttributes([NSAttributedStringKey.font: font], range: NSRange(location: 0, length: attrSting.length))
+        return attrSting
+        
+    }
     
     /// 根据string []在所有的表情符号中查找对应的表情模型对象
     ///
