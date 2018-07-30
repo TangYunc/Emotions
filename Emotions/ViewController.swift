@@ -24,21 +24,58 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var demoLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let m1 = TYCEmoticonManager.share
-        print(m1.packages)
-//        let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
-//        let bundle = Bundle(path: path!)
-//        let image = UIImage(named: "lxh/lxh_toule.png", in: bundle, compatibleWith: nil)
-//        print(image)
-        print(TYCEmoticonManager.share.packages.last?.emotions.first?.image)
-        print(TYCEmoticonManager.share.packages.last?.emotions.first)
-       //-----测试查找表情-----
-        print(TYCEmoticonManager.share.findEmoticon(string: "[爱你]"))
+        //我[爱你]啊[笑哈哈]
+        let sting = "我[爱你]啊[笑哈哈]"
+        demoLabel.attributedText = emoticonString(string: sting)
+    }
+    /// 将给定的字符串转换成属性文本
+    ///
+    /// - Parameter string: 完整的字符串
+    /// - Returns: 属性文本
+    func emoticonString(string: String) -> NSAttributedString {
+        
+        let attrSting = NSAttributedString(string: string)
+        //1.建立正则表达式，过滤所有的表情文字
+        //[] () 都是正则表达式的关键字，如果要参与匹配，需要转义
+        let pattern = "\\[.*?\\]"
+        
+        guard let regx = try? NSRegularExpression(pattern: pattern, options: []) else {
+            return attrSting
+        }
+        //匹配所有项
+        let matches = regx.matches(in: string, options: [], range: NSRange(location: 0, length: attrSting.length))
+        //遍历所有匹配结果
+        for m in matches {
+            let r = m.range(at: 0)
+            let subStr = (attrSting.string as NSString).substring(with: r)
+            print(subStr)
+            
+            
+        }
+        return attrSting
+        
     }
 
+    func demo() {
+        //------测试单例----
+        let m1 = TYCEmoticonManager.share
+        print(m1.packages)
+        //        let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
+        //        let bundle = Bundle(path: path!)
+        //        let image = UIImage(named: "lxh/lxh_toule.png", in: bundle, compatibleWith: nil)
+        //        print(image)
+        print(TYCEmoticonManager.share.packages.last?.emotions.first?.image as Any)
+        print(TYCEmoticonManager.share.packages.last?.emotions.first as Any)
+        //-----测试查找表情-----
+        print(TYCEmoticonManager.share.findEmoticon(string: "[爱你]") as Any)
+        //------测试直接生成表情属性文本
+        let em = TYCEmoticonManager.share.findEmoticon(string: "[马上有对象]")
+        demoLabel.attributedText = em?.imageText(font: demoLabel.font)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

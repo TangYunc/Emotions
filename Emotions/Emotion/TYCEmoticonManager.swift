@@ -41,7 +41,7 @@ extension TYCEmoticonManager {
 //            let result = p.emotions.filter() { (em) -> Bool in
 //                return em.chs == string
 //            }
-            //方法三，如果闭包中只有一句，并且是返回‘闭包的格式定义可以省略，参数省略之后，使用 $0 $1... 一次替代原有的参数,reture 也可以省略
+            //方法三，如果闭包中只有一句，并且是返回‘闭包的格式定义可以省略，参数省略之后，使用 $0 $1... 一次替代原有的参数
 //            let result = p.emotions.filter() {
 //                return $0.chs == string
 //            }

@@ -36,7 +36,20 @@ class TYCEmoticon: NSObject {
         }
         return UIImage(named: "\(directory)/\(png)", in: bundle, compatibleWith: nil)
     }
-    
+    func imageText(font: UIFont) -> NSAttributedString {
+        
+        /// 判断图像是否存在
+        guard let image = image else {
+            return NSAttributedString(string: "")
+        }
+        /// 创建文本附件
+        let attachement = NSTextAttachment()
+        attachement.image = image
+        let height = font.lineHeight
+        attachement.bounds = CGRect(x: 0, y: -4, width: height, height: height)
+        /// 返回图片属性文本
+        return NSAttributedString(attachment: attachement)
+    }
     override var description: String{
         return yy_modelDescription();
     }
